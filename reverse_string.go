@@ -1,6 +1,11 @@
 package reverse_string
 
 func ReverseString(input string) (output string) {
-	// solution goes here
+	k := strings.Split(input, "")
+	last := len(k) - 1
+	for i := 0; i < len(k)/2; i++ {
+		k[i], k[last-i] = k[last-i], k[i]
+	}
+	output = strings.Join(k, "")
 	return output
 }
